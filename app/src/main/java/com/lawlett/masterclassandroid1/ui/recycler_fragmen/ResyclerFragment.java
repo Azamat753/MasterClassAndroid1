@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.lawlett.masterclassandroid1.IAddDataListener;
 import com.lawlett.masterclassandroid1.R;
 import com.lawlett.masterclassandroid1.ui.recycler_fragmen.adapter.StudentAdapter;
 
@@ -40,6 +41,10 @@ public class ResyclerFragment extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(studentAdapter);
+
+        view.findViewById(R.id.btn_update).setOnClickListener(v -> {
+            ((IUpdateDataListener) requireActivity()).update();
+        });
     }
 
     public void addData(String string) {

@@ -35,8 +35,7 @@ public class FormFragment extends Fragment {
         editText = view.findViewById(R.id.edit_text_form);
 
         button.setOnClickListener(v -> {
-            assert getParentFragment() != null;
-            ((IAddDataListener) getParentFragment()).addData(editText.getText().toString().trim());
+            ((IAddDataListener) requireActivity()).addData(editText.getText().toString().trim());
         });
     }
 }
